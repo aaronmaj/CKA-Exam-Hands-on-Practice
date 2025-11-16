@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: read-pod-global
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: reader
+subjects:
+  - apiGroup: rbac.authorization.k8s.io
+    kind: User
+    name: viola
+  - apiGroup: rbac.authorization.k8s.io
+    kind: Group
+    name: developers
